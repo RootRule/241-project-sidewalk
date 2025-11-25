@@ -50,11 +50,11 @@ This class is a parser specifically designed to parse CSV files for street infor
 
 ## 3. Graph
 
-This class represents a graph data structure. It allows for the creation of nodes. addition of edges, retrieval of nodes and their neighbors, and reporting of graph statistics. The graph is implemented using an adjacency-list style format, where each node maintains a list of its neighbors. This class has been completed for you.
+This class represents a graph data structure. It allows for the creation of nodes, addition of edges, retrieval of nodes and their neighbors, and reporting of graph statistics. The graph is implemented using an adjacency-list style format, where each node maintains a list of its neighbors. This class has been completed for you.
 
 ## 4. GraphParser
 
-This class serves as a blueprint for creating specific graph parsers by defining the required methods for opening a file a parsing its contents into a graph representation. By extending this class and implementing the 'open()' and 'parse()' methods, you can create parsers for different file formats and customize the parsing logic according to their needs.
+This class serves as a blueprint for creating specific graph parsers by defining the required methods for opening a file a parsing its contents into a graph representation. **By extending this class and implementing the 'open()' and 'parse()' methods, you can create parsers for different file formats and customize the parsing logic according to their needs.**
 
 ## 5. Node
 
@@ -68,8 +68,8 @@ This class provides an implementation of Dijkstra's Single-Source Shortest Paths
 2. Implement the shortestPathLength method to fetch the shortest path length from the paths data computed earlier.
 3. Implement the shortestPath method to reconstruct the sequence of nodes along the shortest path from the origin to the specified destination using the paths data computed earlier.
 4. Create a ShortestPaths object and use it to compute the shortest paths data from the origin node by origCode.
-5. This TODO is located inside the main method and if destCode was not given as a command line argument, it needs to print each reachable node followed by the length of the shortest path to it from the origin.
-6. This TODO is also located inside the main method and if destCode was given as a command line argument, it should print the nodes in the path from origCode and destCode, followed by the total path length. If no path exists, print a message indicating that no path is found.
+5. TODO inside the main method: if destCode was not given as a command line argument, it needs to print each reachable node followed by the length of the shortest path to it from the origin.
+6. TODO inside the main method: and if destCode was given as a command line argument, it should print the nodes in the path from origCode and destCode, followed by the total path length. If no path exists, print a message indicating that no path is found.
 
 # Advice
 
@@ -77,9 +77,9 @@ This class provides an implementation of Dijkstra's Single-Source Shortest Paths
 - Three simple graphs (Simple0.txt, Simple1.txt, Simple2.txt) are provided. Run the algorithm by hand to determine the correct answers for these graphs and verify that your implementation arrives at the correct paths and path lengths.
 - The sample graphs given are not sufficient to test you algorithm's correctness. It's your responsibility to write tests that cover all possible cases that the algorithm could encounter.
 - Make sure your algorithm handles edge cases correctly, including behaving as specified when the destination node is unreachable. Test this using the simplest possible test cases
-  - For example, this edge case could be tested using a two-node graph with only an edge from destination to origin.
+  - For example, this edge case could be tested using a two-node graph with a directed edge from destination to origin.
 - The BasicParser class parses a simple edge list from a text file, such as Simple1.txt and Simple2.txt. The DBParser class parses a CSV file, such as DBCrop.csv. Feel free to write and test using additional graph files in these formats. You may get more CSV files from the Sidewalk API. You provide lat/lng bounds for the ares that you want to query.
-- Some cleaning will be needed for the new CSV files.
+- If you choose to test your code on new CSV files from Project Sidewalk, some cleaning will be needed. Instructions for cleaning in MS Excel:
   1. Split the coordinates in the "coordinates" column to extract "origin" and "destination". Consider the first coordinate as the "origin", the second coordinate as the "destination", and ignore any extra coordinates.
   2. Rename the column headers accordingly. The below steps will be useful:
     a. Select the cell or column that contains the text you want to split
@@ -95,12 +95,15 @@ This class provides an implementation of Dijkstra's Single-Source Shortest Paths
 
 Each person must write a reflection in a new file named `reflection.md`.
 
-
 `reflection.md` should include the following information:
 
 - Declare/discuss any aspects of your code that are not working. What are your intuitions about why they are not working? Acknowledge and discuss any parts of the program that appear to be inefficient.
 - What are some of the most important lessons you learned while working on this assignment? Why do you think so?
 - What was the most challenging aspect of this assignment? Why?
+
+# Assignment Submission
+
+Fork this repository on Github to create your own version of the repository. Submit the assignment by uploading either a ZIP file of your code, or a link to your public GitHub repository.
 
 # Contributors
 
