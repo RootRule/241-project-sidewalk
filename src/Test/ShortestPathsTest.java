@@ -1,10 +1,7 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import java.net.URL;
 import java.io.FileNotFoundException;
-
 import java.util.LinkedList;
 
 public class ShortestPathsTest {
@@ -51,16 +48,13 @@ public class ShortestPathsTest {
         assertEquals(aa.size(), 1);
         assertEquals(aa.toString(), "[A]");
         assertEquals(sp.shortestPathLength(a), 0.0, 1e-6);
+
         //recompute / origin cannot reach anything
         assertEquals(sp.getPaths().keySet().toString(), "[A, B, C]"); //previous compute
-        
         sp.compute(b);
-        System.out.println(sp.getPaths().keySet());
         assertEquals(sp.getPaths().keySet().toString(), "[B]"); //new compute
     }
-    //STARTING MY OWN THING
 
-    //prove that algorthm is getting correct paths and path lengths for simple0, simple1, and simple 2
     @Test
     public void test01Simple1() {
         Graph g = loadBasicGraph("data/Simple1.txt");
@@ -69,7 +63,6 @@ public class ShortestPathsTest {
         Node a = g.getNode("A");
         sp.compute(a);
 
-        //not checking compute becuase thats too big of lists. check compute trhoguh shortestpaths and shortestpathlength
         //cycles included in this one
 
         Node d = g.getNode("D");
@@ -92,12 +85,14 @@ public class ShortestPathsTest {
         ShortestPaths sp = new ShortestPaths();
         Node a = g.getNode("A");
         sp.compute(a);
+
         //a one away node
         Node h = g.getNode("H");
         LinkedList<Node> ah = sp.shortestPath(h);
         assertEquals(ah.size(), 2);
         assertEquals(ah.toString(), "[A, H]");
         assertEquals(sp.shortestPathLength(h), 10.0, 1e-6);
+
         //a far away node
         Node j = g.getNode("J");
         LinkedList<Node> aj = sp.shortestPath(j);
@@ -113,9 +108,8 @@ public class ShortestPathsTest {
         ShortestPaths sp = new ShortestPaths();
         Node a = g.getNode("A");
         sp.compute(a);
-        //origin cannot reach anything
 
-        //unreachable node from origin
+        //unreachable node from origin (no path)
         Node b = g.getNode("B");
         LinkedList<Node> ab = sp.shortestPath(b);
         assertEquals(ab, null);
@@ -130,7 +124,7 @@ public class ShortestPathsTest {
         Node a = g.getNode("A");
         sp.compute(a);
 
-        //testing multiple shortest paths with same length
+        //multiple shortest paths with same length
         Node e = g.getNode("E");
         LinkedList<Node> ae = sp.shortestPath(e);
         assertEquals(ae.size(), 3);

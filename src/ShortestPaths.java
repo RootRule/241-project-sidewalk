@@ -139,9 +139,7 @@ public class ShortestPaths {
      */
     public String toString () {
         String sp = "";
-        //System.out.println(sp.getPaths().keySet() + " " + sp.getPaths().values());
         Set<Node> nodes = paths.keySet();
-        //paths.getn will get matching key set
         for (Node n: nodes) {
             sp = sp + "NODE " + n + ": (" + paths.get(n) + ") ";
         }
